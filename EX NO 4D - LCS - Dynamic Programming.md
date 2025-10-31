@@ -18,11 +18,37 @@ Constraints:
 text1 and text2 consist of only lowercase English characters.
 
 ## Algorithm
-1. 
-2. 
-3. 
-4.  
-5.   
+✅ **Procedure:**
+
+1. **Input:**
+
+   * Read two strings, `text1` and `text2`, from the user.
+
+2. **Initialization:**
+
+   * Let `m` = length of `text1` and `n` = length of `text2`.
+   * Create a 2D array `dp[m+1][n+1]`, where `dp[i][j]` stores the length of the longest common subsequence (LCS) between `text1[0..i-1]` and `text2[0..j-1]`.
+
+3. **Filling the DP Table:**
+
+   * For each `i` from `1` to `m`:
+
+     * For each `j` from `1` to `n`:
+
+       * If characters match (`text1.charAt(i-1) == text2.charAt(j-1)`):
+         → `dp[i][j] = 1 + dp[i-1][j-1]`
+       * Else:
+         → `dp[i][j] = max(dp[i-1][j], dp[i][j-1])`
+
+4. **Result:**
+
+   * The value `dp[m][n]` gives the **length of the longest common subsequence**.
+
+5. **Output:**
+
+   * Print the result:
+     `"Length of Longest Common Subsequence: " + dp[m][n]`
+  
 
 ## Program:
 ```
