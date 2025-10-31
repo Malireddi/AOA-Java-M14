@@ -9,11 +9,31 @@ Input: nums = [10,9,2,5,3,7,101,18]
 Output: 4
 Explanation: The longest increasing subsequence is [2,3,7,101], therefore the length is 4.
 ## Algorithm
-1. 
-2. 
-3. 
-4.  
-5.   
+
+1. **Input:**
+
+   * Read the integer `n` (size of array).
+   * Read `n` integers into the array `nums`.
+
+2. **Initialization:**
+
+   * Create an array `dp[n]`, where `dp[i]` stores the **length of the longest increasing subsequence (LIS)** ending at index `i`.
+   * Initialize all values of `dp` to `1`, since each element is an LIS of length `1` by itself.
+   * Initialize `maxLen = 1` to keep track of the overall maximum LIS length.
+
+3. **Dynamic Programming Logic:**
+
+   * For each element `nums[i]` (from index `1` to `n-1`):
+
+     * Compare it with all previous elements `nums[j]` (where `j < i`).
+     * If `nums[i] > nums[j]`, it means we can extend the subsequence ending at `j`.
+       → Update `dp[i] = max(dp[i], dp[j] + 1)`
+   * After each iteration, update `maxLen = max(maxLen, dp[i])`.
+
+4. **Output:**
+
+   * Print `maxLen`, which represents the **length of the longest increasing subsequence**.
+ 
 
 ## Program:
 ```
