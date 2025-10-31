@@ -1,5 +1,5 @@
 
-# EX 4A Print Kadane's Algorithm - Dynamic Programming. 
+# EX 4A Kadane's Algorithm - Dynamic Programming. 
 ## DATE:
 ## AIM:
 To Write a Java program to solve the below problem using Kadane's Algorithm.
